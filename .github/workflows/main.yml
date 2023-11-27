@@ -31,8 +31,12 @@ jobs:
     - name: Update kube config
       run: aws eks update-kubeconfig --name HL7-dev-eks
         
-    - name: Run Dagster
+    - name: deploy dagster through helm
       run: |
-         git clone https://github.com/Mahesh096/dagster-deloyment.git
-         cd dagster-deloyment/helm/dagster
-         helm install mydagster .
+        helm repo add dagster https://dagster-io.github.io/helm
+
+    - name: helm inatallation
+      run: |       
+        helm install my-release . \
+        --namespace dagster \
+        --create-namespace
