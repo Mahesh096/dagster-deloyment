@@ -33,6 +33,6 @@ jobs:
         
     - name: Run Dagster
       run: |
-         git clone https://github.com/dagster-io/dagster.git
-         cd dagster/helm/dagster
+         git clone https://github.com/Mahesh096/dagster-deloyment.git
+         cd dagster-deloyment/helm/dagster
          helm install mydagster .
